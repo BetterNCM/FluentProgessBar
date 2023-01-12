@@ -9,7 +9,7 @@ plugin.onLoad(()=>{
             return;
         }
         if (!dragging) draggedProgress = 1;
-        fluentProgressBarController.innerHTML = `.prg{ overflow-x: hidden; } \n.prg:not(.hvr) .has { width: 100% !important; transform: translateX(${percent}%) !important; }`;
+        fluentProgressBarController.innerHTML = `.prg{ ${(!("MaterialYouTheme" in loadedPlugins))&&"overflow-x: hidden;"} } \n.prg:not(.hvr) .has { width: 100% !important; transform: translateX(${percent}%) !important; }`;
     };
     legacyNativeCmder.appendRegisterCall('PlayProgress','audioplayer',(_,progress)=>{
         const [min,sec]=document.querySelector('time.all').innerText.split(':');
