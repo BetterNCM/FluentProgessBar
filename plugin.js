@@ -22,7 +22,7 @@ plugin.onLoad(() => {
             if (animOper?.playState === 'running')
                 animOper.currentTime = animCT;
         });
-        legacyNativeCmder.appendRegisterCall('PlayState', 'audioplayer', (_, state) => {
+        legacyNativeCmder.appendRegisterCall('PlayState', 'audioplayer', (_, __, state) => {
             if (state === 2)
                 animOper.pause();
             else if (state === 1)
